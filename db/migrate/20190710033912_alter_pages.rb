@@ -4,7 +4,8 @@ class AlterPages < ActiveRecord::Migration[5.2]
   end
 
   def down
-    change_column("pages", "permalink", :integer)
+    remove_column("pages", "permalink")  
+    add_column("pages", "permalink", :integer)
   end
   
 end
