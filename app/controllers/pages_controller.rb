@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @page = Page.find(params[:id])
   end
 
   def new
@@ -23,4 +24,9 @@ class PagesController < ApplicationController
 
   def destroy
   end
+
+  # private
+
+  # def
+  # end 
 end
