@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   get 'home/about'
   get 'demo/index'
-  # get 'demo/hello'
-  # get 'demo/other_hello'
+  get 'demo/hello'
+  get 'demo/other_hello'
 
   # default route 
   # may be deprecated later on
