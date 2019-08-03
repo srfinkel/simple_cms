@@ -21,9 +21,16 @@ class PagesController < ApplicationController
   end
 
   def edit
+    @page = Page.find(params[:id])
   end
 
   def update
+    @page = Page.find(params[:id])
+    if @page.update_attributes(page_params)
+      redirect_to(page_path(@page))
+    else
+      render('edit')
+    end
   end
 
   def delete
