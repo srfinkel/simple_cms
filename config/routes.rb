@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
-  get 'pages/show'
-  get 'pages/new'
-  get 'pages/create'
-  get 'pages/edit'
-  get 'pages/update'
-  get 'pages/delete'
-  get 'pages/destroy'
   root 'demo#index'
 
   resources :subjects do
@@ -16,10 +8,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :pages do
+    member do 
+      get :delete
+    end
+  end
+
   get 'home/about'
   get 'demo/index'
-  get 'demo/hello'
-  get 'demo/other_hello'
+  # get 'demo/hello'
+  # get 'demo/other_hello'
 
   # default route 
   # may be deprecated later on
