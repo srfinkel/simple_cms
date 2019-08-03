@@ -10,6 +10,7 @@
       <th>Permalink</th>
       <th>Position</th>
       <th>Visible</th>
+      <th>Subject_ID</th>
     </tr>
     <% @pages.each do |page| %>
     <tr>
@@ -17,6 +18,7 @@
       <td><%= page.permalink %></td>
       <td class="center"><%= page.position %></td>
       <td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
+      <td class="center"><%= page.subject_id %></td>
       <td class="actions">
         <%= link_to("Show", page_path(page), :class => 'action show') %>
         <%= link_to("Edit", edit_page_path(page), :class => 'action edit') %>

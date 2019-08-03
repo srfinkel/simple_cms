@@ -8,9 +8,16 @@ class PagesController < ApplicationController
   end
 
   def new
+    @page = Page.new
   end
 
   def create
+    @page = Page.new(page_params)
+    if @page.save
+      redirect_to(pages_path)
+    else
+      render('new')
+    end
   end
 
   def edit
@@ -25,8 +32,10 @@ class PagesController < ApplicationController
   def destroy
   end
 
-  # private
+  private
 
-  # def
-  # end 
+    def page_params
+      params.require(:page).permit(:name, :permalink, :position, :visible, :subject_id)
+    end 
+
 end
