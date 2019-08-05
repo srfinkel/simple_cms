@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_042929) do
+ActiveRecord::Schema.define(version: 2019_08_05_024813) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "first_name", limit: 25
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 2019_07_10_042929) do
     t.string "name", limit: 100
     t.integer "position"
     t.boolean "visible"
-    t.string "content-type", limit: 50
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content_type"
     t.index ["page_id"], name: "index_sections_on_page_id"
   end
 
