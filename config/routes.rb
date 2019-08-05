@@ -21,6 +21,12 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+  
+  resources :sections do
+    member do 
+      get :delete
+    end
+  end
 
   get 'home/about'
   get 'demo/index'
