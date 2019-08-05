@@ -14,13 +14,13 @@
       <th>#</th>
       <th>Name</th>
       <th>Visible</th>
-      <th>Pages</th>
-      <th>Actions</th>
+      <th>Content Type</th>
+      <th>Content</th>
     </tr>
     <% @sections.each do |section| %>
     <tr>
+      <td class="center"><%= section.position %></td>
       <td><%= section.name %></td>
-      <td><%= section.position %></td>
       <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
       <td><%= section.content_type %></td> 
       <td><%= section.content %></td>
