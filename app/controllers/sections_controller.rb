@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   def index
-    @sections = Section.all
+    @sections = Section.sorted
   end
 
   def show
@@ -14,6 +14,7 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(section_params)
     if @section.save
+      flash[:notice] = "Section successfully created."
       redirect_to(sections_path)
     else
       render('new')
@@ -27,6 +28,7 @@ class SectionsController < ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
+      flash[:notice] = "Section successfully updated."
       redirect_to(section_path(@section))
     else
       render('edit')
@@ -40,6 +42,7 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
+    flash[:notice] = "Section successfully destroyed."
     redirect_to(sections_path)
   end
 

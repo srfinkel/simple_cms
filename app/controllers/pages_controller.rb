@@ -28,6 +28,7 @@ class PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(page_params)
+      flash[:notice] = "Page successfully updated."
       redirect_to(page_path(@page))
     else
       render('edit')
@@ -41,6 +42,7 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
+    flash[:notice] = "Page successfully deleted."
     redirect_to(pages_path)
   end
 
