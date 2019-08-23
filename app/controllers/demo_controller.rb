@@ -17,4 +17,8 @@ class DemoController < ApplicationController
     redirect_to(:action => 'index')
   end
 
+  def escape_output
+    
+  end
+
 end
